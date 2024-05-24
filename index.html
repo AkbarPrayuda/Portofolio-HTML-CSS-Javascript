@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akbar Prayuda Putra - Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        header {
+            background-color: #f57c00; /* Orange */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+        .navbar .menu {
+            display: none;
+        }
+        .navbar .menu-icon {
+            display: block;
+            cursor: pointer;
+        }
+        .navbar.responsive .menu {
+            display: block;
+            width: 100%;
+        }
+        .navbar.responsive .menu-icon {
+            display: none;
+        }
+        .navbar.responsive a {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #444;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            margin-top: 10px;
+            font-size: 1.5em;
+            color: #f57c00;
+        }
+        .portfolio-item {
+            border: 1px solid #eee;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .portfolio-item h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .portfolio-item p {
+            margin: 0;
+        }
+        .about {
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            header, .container, footer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="javascript:void(0);" class="menu-icon" onclick="toggleNavbar()">&#9776;</a>
+        <div class="menu">
+            <a href="#about">Tentang Saya</a>
+            <a href="#portfolio">Portofolio</a>
+            <a href="#contact">Kontak</a>
+        </div>
+    </div>
+    <header>
+        <h1>Akbar Prayuda Putra</h1>
+        <h2>Portofolio</h2>
+    </header>
+    <div class="container">
+        <div class="about" id="about">
+            <h2>Tentang Saya</h2>
+            <p>Hai! Saya Akbar Prayuda Putra, seorang pengembang web dengan fokus utama pada backend development menggunakan bahasa PHP dan framework Laravel. Saya juga sedang belajar menjadi seorang full-stack developer dengan mempelajari frontend development. Saya lulus dari SMK Pertiwi Kuningan dengan jurusan Rekayasa Perangkat Lunak.</p>
+            <p>Saya memiliki pengalaman dalam mengerjakan proyek-proyek indie yang memberikan saya banyak kesempatan untuk mengasah keterampilan saya dalam pengembangan web. Selain itu, saya juga memiliki sertifikat PKL yang memperkuat keahlian saya di bidang ini.</p>
+            <p>Di luar pekerjaan, saya suka berolahraga dan menjalani hidup sesuai dengan moto saya: "Hidup sesuai apa yang kamu percaya". Saya selalu termotivasi untuk belajar hal baru dan terus berkembang dalam karier saya sebagai pengembang web.</p>
+            <p>Untuk melihat proyek-proyek saya, Anda dapat mengunjungi profil GitHub saya atau mengikuti saya di Instagram.</p>
+        </div>
+        <div id="portfolio">
+            <h2>Portofolio</h2>
+            <div class="portfolio-item">
+                <h3>Proyek 1</h3>
+                <p>Deskripsi singkat tentang proyek pertama. Apa yang dilakukan, teknologi yang digunakan, dan hasilnya.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Proyek 2</h3>
+                <p>Deskripsi singkat tentang proyek kedua. Apa yang dilakukan, teknologi yang digunakan, dan hasilnya.</p>
+            </div>
+            <!-- Tambahkan lebih banyak proyek sesuai kebutuhan -->
+        </div>
+    </div>
+    <footer id="contact">
+        <p>Kontak saya melalui GitHub atau Instagram.</p>
+        &copy; 2024 Akbar Prayuda Putra
+    </footer>
+    <script>
+        function toggleNavbar() {
+            var navbar = document.getElementById("navbar");
+            if (navbar.className === "navbar") {
+                navbar.className += " responsive";
+            } else {
+                navbar.className = "navbar";
+            }
+        }
+
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                var navbar = document.getElementById("navbar");
+                if (navbar.className.includes("responsive")) {
+                    navbar.className = "navbar";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
